@@ -67,9 +67,9 @@ def setup():
 blockchain = setup()
 
 st.markdown("## Write transaction")
-sender = st.text_input("Source")
-receiver = st.text_input("Destination")
-amount = st.text_input("Quantity")
+sender      = st.text_input("Source")
+receiver    = st.text_input("Destination")
+amount      = st.text_input("Quantity")
 
 if st.button("Send"): # returns True if button was clicked on last run...
     prev_block = blockchain.chain[-1]
@@ -95,19 +95,3 @@ selected_block = st.sidebar.selectbox("Select block:", blockchain.chain)
 st.sidebar.write(selected_block)
 if st.button("Validate"):
     st.write(blockchain.is_valid())
-
-# 2. In the terminal, run the Streamlit application by
-# using `streamlit run pychain.py`.
-
-# 3. Enter values for the sender, receiver, and amount, and then click the "Add
-# Block" button. Do this several times to store several blocks in the ledger.
-
-# 4. Verify the block contents and hashes in the Streamlit drop-down menu.
-# Take a screenshot of the Streamlit application page, which should detail a
-# blockchain that consists of multiple blocks. Include the screenshot in the
-# `README.md` file for your Challenge repository.
-
-# 5. Test the blockchain validation process by using the web interface.
-# Take a screenshot of the Streamlit application page, which should indicate
-# the validity of the blockchain. Include the screenshot in the `README.md`
-# file for your Challenge repository.
